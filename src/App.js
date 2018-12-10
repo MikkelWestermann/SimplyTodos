@@ -1,25 +1,42 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import List from './Components/List';
+import Form from './Components/Form';
+
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: [],
+    }
+  }
+  handleAddTodo = (todo) => {
+    if(todo.length === 0) {
+      return;
+    }
+    this.setState(prevState => ({
+      todos: [...prevState.todos, todo]
+    }));
+  }
+  handleRemoveTodo = (index) => {
+    const array = [...this.state.todos];
+    if (index !== -1) {
+      array.splice(index, 1);
+      this.setState({todos: array});
+    }
+  }
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+    return(
+      <div className='App'>
+        <h1>Simply Todos</h1>
+        <Form
+          onAddTodo={this.handleAddTodo}
+        />
+        <List
+          todos={this.state.todos}
+          onRemoveTodo={this.handleRemoveTodo}
+        />
       </div>
     );
   }
