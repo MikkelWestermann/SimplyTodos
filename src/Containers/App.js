@@ -4,11 +4,12 @@ import './App.css';
 import List from '../Components/List';
 import Form from '../Components/Form';
 
-import { setTodos, removeTodo } from '../actions';
+import { setTodos, removeTodo, removeDoneTodo } from '../actions';
 
 const mapStateToProps = state => {
   return {
-    todos: state.todos
+    todos: state.todos,
+    doneTodos: state.doneTodos
   }
 }
 
@@ -22,6 +23,9 @@ const mapDispatchToProps = dispatch => {
     },
     handleRemoveTodo: index => {
       dispatch(removeTodo(index))
+    },
+    handleRemoveDoneTodo: index => {
+      dispatch(removeDoneTodo(index))
     }
   }
 }
@@ -37,7 +41,20 @@ class App extends Component {
         <List
           todos={this.props.todos}
           onRemoveTodo={this.props.handleRemoveTodo}
+          color={'38b3be'}
         />
+        {
+          this.props.doneTodos.length !== 0
+          &&
+          <div>
+            <h2>Done Todos</h2>
+            <List
+              todos={this.props.doneTodos}
+              onRemoveTodo={this.props.handleRemoveDoneTodo}
+              color={'55e888'}
+            />
+          </div>
+        }
       </div>
     );
   }

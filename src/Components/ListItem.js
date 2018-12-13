@@ -1,15 +1,5 @@
 import React, { Component } from 'react';
-
-const divStyle = {
-  color: '#1f1f1f',
-  backgroundColor: '#38b3be',
-  width: '100vw',
-  height: '150px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  fontSize: '2.5em'
-};
+import './ListItem.css';
 
 class ListItem extends Component {
   handleRemoveTodo = () => {
@@ -18,7 +8,7 @@ class ListItem extends Component {
   render() {
     return (
       <div>
-        <h3 style={divStyle} onClick={this.handleRemoveTodo}>{this.props.todo}</h3>
+        <h3 style={{backgroundColor: `#${this.props.color}`}} className='listItem' onClick={this.handleRemoveTodo}>{this.props.todo}</h3>
       </div>
     );
   }

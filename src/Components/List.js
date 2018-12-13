@@ -1,7 +1,7 @@
 import React from 'react';
 import ListItem from './ListItem';
 
-const List = ({ todos, onRemoveTodo }) => {
+const List = ({ todos, onRemoveTodo, color }) => {
   return (
     <div>
       {
@@ -12,6 +12,7 @@ const List = ({ todos, onRemoveTodo }) => {
               key={i}
               index={i}
               onRemoveTodo={onRemoveTodo}
+              color={color}
             />
           )
         })

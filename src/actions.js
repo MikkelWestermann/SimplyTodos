@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO } from './constants';
+import { ADD_TODO, REMOVE_TODO, REMOVE_DONE_TODO } from './constants';
 
 export const setTodos = (text) => ({
   type: ADD_TODO,
@@ -7,5 +7,10 @@ export const setTodos = (text) => ({
 
 export const removeTodo = (index) => ({
   type: REMOVE_TODO,
+  payload: index
+})
+
+export const removeDoneTodo = (index) => ({
+  type: REMOVE_DONE_TODO,
   payload: index
 })
