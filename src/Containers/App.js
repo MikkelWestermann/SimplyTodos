@@ -31,12 +31,20 @@ const mapDispatchToProps = dispatch => {
 }
 
 class App extends Component {
+  isAllDone = () => {
+    return this.props.todos.length === 0 && this.props.doneTodos.length > 0 ? true : false;
+  }
+  color = () => {
+    return this.isAllDone() ? '55e888' : '38b3be'
+  }
   render() {
     return(
-      <div className='App' >
+      <div style={{color:`#${this.color()}`}} className='App' >
         <h1>Simply Todos</h1>
         <Form
           onAddTodo={this.props.handleAddTodo}
+          color={this.color()}
+          isGreen={this.isAllDone()}
         />
         <List
           todos={this.props.todos}

@@ -23,11 +23,14 @@ class Form extends Component {
       inputVal: event.target.value
     })
   }
+  isGreen = () => {
+    return this.props.isGreen ? 'isGreen' : 'isBlue';
+  }
   render() {
     return (
-      <form onSubmit={this.handleSubmit} autoComplete='off'>
-        <input type='text' placeholder='Add Todo' id='textField'  value={this.state.inputVal} onChange={this.onInputChange}/>
-        <button type='submit' id='button'>Add</button>
+      <form onSubmit={this.handleSubmit} autoComplete='off' >
+        <input type='text' placeholder='Add Todo' id='textField' value={this.state.inputVal} onChange={this.onInputChange} style={{color: `#${this.props.color}`}} />
+        <button type='submit' id={this.isGreen()}>Add</button>
       </form>
     );
   }
