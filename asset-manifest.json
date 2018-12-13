@@ -1,13 +1,13 @@
 {
-  "main.css": "/SimplyTodos/static/css/main.0f2a82d6.chunk.css",
-  "main.js": "/SimplyTodos/static/js/main.21fae41b.chunk.js",
-  "main.js.map": "/SimplyTodos/static/js/main.21fae41b.chunk.js.map",
-  "static/js/1.e44ddeb4.chunk.js": "/SimplyTodos/static/js/1.e44ddeb4.chunk.js",
-  "static/js/1.e44ddeb4.chunk.js.map": "/SimplyTodos/static/js/1.e44ddeb4.chunk.js.map",
+  "main.css": "/SimplyTodos/static/css/main.aa546f53.chunk.css",
+  "main.js": "/SimplyTodos/static/js/main.5ece03eb.chunk.js",
+  "main.js.map": "/SimplyTodos/static/js/main.5ece03eb.chunk.js.map",
+  "static/js/1.20c3576c.chunk.js": "/SimplyTodos/static/js/1.20c3576c.chunk.js",
+  "static/js/1.20c3576c.chunk.js.map": "/SimplyTodos/static/js/1.20c3576c.chunk.js.map",
   "runtime~main.js": "/SimplyTodos/static/js/runtime~main.57a21264.js",
   "runtime~main.js.map": "/SimplyTodos/static/js/runtime~main.57a21264.js.map",
-  "static/css/main.0f2a82d6.chunk.css.map": "/SimplyTodos/static/css/main.0f2a82d6.chunk.css.map",
+  "static/css/main.aa546f53.chunk.css.map": "/SimplyTodos/static/css/main.aa546f53.chunk.css.map",
   "index.html": "/SimplyTodos/index.html",
-  "precache-manifest.da8cd3bfb955ac2223ac91770a25f00f.js": "/SimplyTodos/precache-manifest.da8cd3bfb955ac2223ac91770a25f00f.js",
+  "precache-manifest.31b982a2cd8796ef7133687e9b9d2abd.js": "/SimplyTodos/precache-manifest.31b982a2cd8796ef7133687e9b9d2abd.js",
   "service-worker.js": "/SimplyTodos/service-worker.js"
 }
