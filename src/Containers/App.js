@@ -29,7 +29,7 @@ const mapDispatchToProps = dispatch => {
 class App extends Component {
   render() {
     return(
-      <div className='App'>
+      <div className='App' >
         <h1>Simply Todos</h1>
         <Form
           onAddTodo={this.props.handleAddTodo}
