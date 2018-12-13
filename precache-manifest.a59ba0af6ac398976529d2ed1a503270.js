@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "5ece03ebe7e1e90d2ded",
-    "url": "/SimplyTodos/static/css/main.aa546f53.chunk.css"
+    "revision": "d0ddd9cf4fbf9b533558",
+    "url": "/SimplyTodos/static/css/main.7b051b56.chunk.css"
   },
   {
-    "revision": "5ece03ebe7e1e90d2ded",
-    "url": "/SimplyTodos/static/js/main.5ece03eb.chunk.js"
+    "revision": "d0ddd9cf4fbf9b533558",
+    "url": "/SimplyTodos/static/js/main.d0ddd9cf.chunk.js"
   },
   {
     "revision": "20c3576cd9e0ac52217e",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/SimplyTodos/static/js/runtime~main.57a21264.js"
   },
   {
-    "revision": "e89034093fcddb0bb6f683447e5c54d8",
+    "revision": "74fdc26ec58aca451b74a55dc683f1a3",
     "url": "/SimplyTodos/index.html"
   }
 ];
