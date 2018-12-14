@@ -4,12 +4,24 @@ import './App.css';
 import List from '../Components/List';
 import Form from '../Components/Form';
 
-import { setTodos, removeTodo, removeDoneTodo } from '../actions';
+import {
+  setTodos,
+  removeTodo,
+  removeDoneTodo,
+  requestTodos,
+  addTodo,
+  removeTodoWithUser,
+  removeDoneTodoWithUser
+} from '../actions';
 
 const mapStateToProps = state => {
   return {
-    todos: state.todos,
-    doneTodos: state.doneTodos
+    noUserTodos: state.updateTodosWithoutUser.todos,
+    noUserDoneTodos: state.updateTodosWithoutUser.doneTodos,
+    userTodos: state.updateTodos.todos,
+    userDoneTodos: state.updateTodos.doneTodos,
+    isPending: state.updateTodos.isPending,
+    error: state.updateTodos.error
   }
 }
 
@@ -21,18 +33,21 @@ const mapDispatchToProps = dispatch => {
       }
       dispatch(setTodos([todo]));
     },
-    handleRemoveTodo: index => {
-      dispatch(removeTodo(index))
-    },
-    handleRemoveDoneTodo: index => {
-      dispatch(removeDoneTodo(index))
-    }
+    handleRemoveTodo: index => {dispatch(removeTodo(index))},
+    handleRemoveDoneTodo: index => {dispatch(removeDoneTodo(index))},
+    handleRequestTodos: () => dispatch(requestTodos()),
+    handleAddTodoWithUser: todo => dispatch(addTodo(todo)),
+    handleRemoveTodoWithUser: todo => dispatch(removeTodoWithUser(todo)),
+    handleRemoveDoneTodoWithUser: todo => dispatch(removeDoneTodoWithUser(todo))
   }
 }
 
 class App extends Component {
+  componentDidMount() {
+    this.props.handleRequestTodos();
+  }
   isAllDone = () => {
-    return this.props.todos.length === 0 && this.props.doneTodos.length > 0 ? true : false;
+    return this.props.userTodos.length === 0 && this.props.userDoneTodos.length > 0 ? true : false;
   }
   color = () => {
     return this.isAllDone() ? '55e888' : '38b3be'
@@ -42,23 +57,23 @@ class App extends Component {
       <div style={{color:`#${this.color()}`}} className='App' >
         <h1>Simply Todos</h1>
         <Form
-          onAddTodo={this.props.handleAddTodo}
+          onAddTodo={this.props.handleAddTodoWithUser}
           color={this.color()}
           isGreen={this.isAllDone()}
         />
         <List
-          todos={this.props.todos}
-          onRemoveTodo={this.props.handleRemoveTodo}
+          todos={this.props.userTodos}
+          onRemoveTodo={this.props.handleRemoveTodoWithUser}
           color={'38b3be'}
         />
         {
-          this.props.doneTodos.length !== 0
+          this.props.userDoneTodos.length !== 0
           &&
           <div>
             <h2>Done Todos</h2>
             <List
-              todos={this.props.doneTodos}
-              onRemoveTodo={this.props.handleRemoveDoneTodo}
+              todos={this.props.userDoneTodos}
+              onRemoveTodo={this.props.handleRemoveDoneTodoWithUser}
               color={'55e888'}
             />
           </div>

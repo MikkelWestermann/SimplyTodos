@@ -3,7 +3,7 @@ import './ListItem.css';
 
 class ListItem extends Component {
   handleRemoveTodo = () => {
-    this.props.onRemoveTodo(this.props.index);
+    this.props.onRemoveTodo(this.props.todo);
   }
   render() {
     return (
