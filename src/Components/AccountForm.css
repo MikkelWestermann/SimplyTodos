@@ -1,0 +1,46 @@
+.accountForm {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #1f1f1f;
+  background-color: #38b3be;
+  border-radius: 25px;
+  padding: 15px 35px;
+  width: 250px;
+  margin: 25px;
+  font-size: 1.5em;
+}
+
+h3 {
+  margin: 15px;
+  font-size: 2em;
+}
+
+input {
+  font-size: 0.9em;
+  background-color: #1f1f1f;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  height: 50px;
+  width: 225px;
+  text-align: center;
+  margin: 10px;
+  color: #38b3be;
+}
+
+label {
+  font-size: 0.75em;
+}
+
+.accountButton {
+  border: 5px solid #1f1f1f;
+  background-color: #38b3be;
+  color: #1f1f1f;
+  width: 240px;
+}
+
+.accountButton:hover {
+  background-color: #1f1f1f;
+  color: #38b3be;
+}

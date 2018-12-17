@@ -7,11 +7,11 @@ import thunkMiddleware from 'redux-thunk';
 import './index.css';
 import App from './Containers/App';
 import * as serviceWorker from './serviceWorker';
-import { updateTodosWithoutUser, updateTodos } from './reducers';
+import { updateTodosWithoutUser, updateTodos, account, accountRoute } from './reducers';
 
 const logger = createLogger();
 
-const rootReducer = combineReducers({ updateTodosWithoutUser, updateTodos });
+const rootReducer = combineReducers({ updateTodosWithoutUser, updateTodos, account, accountRoute });
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, logger));
 
 ReactDOM.render(

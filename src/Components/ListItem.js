@@ -3,7 +3,10 @@ import './ListItem.css';
 
 class ListItem extends Component {
   handleRemoveTodo = () => {
-    this.props.onRemoveTodo(this.props.todo);
+    this.props.isSignedIn ?
+    this.props.onRemoveTodo(this.props.userEmail, this.props.todo)
+    :
+    this.props.onRemoveTodo(this.props.index)
   }
   render() {
     return (

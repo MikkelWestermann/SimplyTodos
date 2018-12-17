@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Roboto');
-body {
+html, body {
   margin: 0;
   padding: 0;
+  width: 100vw;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #38b3be;
+  overflow-x: hidden;
 }

@@ -1,0 +1,16 @@
+nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
+  width: 90vw;
+  font-size: 1.25em; 
+}
+
+nav p {
+  margin: 10px;
+}
+
+nav p:hover {
+  text-decoration: underline;
+  color: #48c3de;
+}

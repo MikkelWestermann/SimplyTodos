@@ -9,7 +9,12 @@ class Form extends Component {
     }
   }
   handleAddTodo = (event) => {
-    this.props.onAddTodo(event.target[0].value);
+    if (this.state.inputVal !== ''){
+      this.props.isSignedIn ?
+      this.props.onAddTodo(this.props.userEmail, event.target[0].value)
+      :
+      this.props.onAddTodo(event.target[0].value);
+    }
   }
   handleSubmit = (event) => {
     event.preventDefault();
